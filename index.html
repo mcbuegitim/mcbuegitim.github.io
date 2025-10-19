@@ -231,17 +231,32 @@
         font-weight: bold;
         margin-bottom: 30px;
     }
+    
+    /* --- GÜNCELLENMİŞ FOOTER STİLİ --- */
+    footer {
+        margin-top: auto; /* Sayfanın en altına it */
+        padding: 20px;
+        background-color: #3b5998; /* Tema renginden bir mavi */
+        color: #f0f0f0; /* Açık gri/beyaz */
+        font-size: 1em;
+        font-weight: 500;
+        letter-spacing: 1px;
+        box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
+        border-top: 3px solid #ff4b5c; /* Vurgu rengi */
+    }
 
     /* Duyarlılık */
     @media (max-width: 768px) {
       h1 { font-size: 2em; padding: 12px 25px; }
       .card img { height: 200px; }
-      .gallery { grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; }
+      /* Mobil için 2 sütunlu düzen (minmax 150px ile daha esnek) */
+      .gallery { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px; } 
     }
     @media (max-width: 480px) {
       h1 { font-size: 1.5em; margin-bottom: 20px; }
       .controls { flex-direction: column; gap: 10px; }
-      .gallery { grid-template-columns: 1fr; width: 85%; }
+      /* Çok küçük ekranlarda bile 2 sütun kalsın */
+      .gallery { grid-template-columns: repeat(2, 1fr); width: 90%; } 
       .modal-content { padding: 30px; }
       .modal-content h2 { font-size: 2em; }
       .modal-content p { font-size: 1.5em; }
@@ -317,7 +332,9 @@
     </div>
   </div>
 
-  <footer>© 2025 Manisa Celal Bayar Üniversitesi | Eğitim Fakültesi</footer>
+  <footer>
+      © 2025 | Manisa Celal Bayar Üniversitesi - Eğitim Fakültesi | Tüm Hakları Saklıdır
+  </footer>
 
   <div id="resultsModalOverlay" class="modal-overlay">
       <div class="modal-content">
